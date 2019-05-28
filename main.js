@@ -1,16 +1,7 @@
-const tagSpan = document.querySelector('span');
-tagSpan.textContent = sessionStorage.getItem('textSpan') || 0;
-let textSpan = tagSpan.textContent;
+const containerCounter = document.querySelector('span');
+containerCounter.textContent = sessionStorage.getItem('currentDigit') || 0;
 
-function countClick() {
-    return textSpan++;
-}
-
-let counter = function () {
-    return countClick();
-}
 document.addEventListener('click', () => {
-    const newTextSpan = counter();
-    tagSpan.textContent = newTextSpan;
-    sessionStorage.setItem('textSpan', newTextSpan);
+    containerCounter.textContent = (+containerCounter.textContent) + 1;
+    sessionStorage.setItem('currentDigit', containerCounter.textContent);
 })
