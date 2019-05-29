@@ -5,4 +5,4 @@ document.addEventListener('click', () => {
     const counter = (+containerCounter.textContent) + 1;
     containerCounter.textContent = counter;
     sessionStorage.setItem('currentDigit', counter);
-})
+});
