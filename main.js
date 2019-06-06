@@ -1,8 +1,9 @@
 const containerCounter = document.querySelector('span');
-containerCounter.textContent = sessionStorage.getItem('currentDigit') || 0;
+let currentValue = sessionStorage.getItem('currentDigit') || 0;
+containerCounter.textContent = currentValue;
 
 document.addEventListener('click', () => {
-    const counter = (+containerCounter.textContent) + 1;
-    containerCounter.textContent = counter;
-    sessionStorage.setItem('currentDigit', counter);
+    currentValue++;
+    containerCounter.textContent = currentValue;
+    sessionStorage.setItem('currentDigit', currentValue);
 });
